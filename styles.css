@@ -39,7 +39,7 @@ h1:hover {
 }
 
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,4 +51,8 @@ footer{
     left: 0px;
 }
 
+h3 {
+    margin: 0;
+    padding: 5px;
+}
 
