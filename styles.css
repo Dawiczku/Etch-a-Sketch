@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+button {
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: #0a0a23;
+    color: white;
+}
