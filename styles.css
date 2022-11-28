@@ -14,15 +14,19 @@ button {
 body {
     background-color: #0a0a23;
     color: white;
-    height: 100vh;
     overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    position: absolute;
 }
 
 .heading {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20vh;
 }
 
 h1 {
@@ -33,3 +37,18 @@ h1 {
 h1:hover {
     cursor: default;
 }
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #0a0a23;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+
