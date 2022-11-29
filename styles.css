@@ -3,7 +3,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 body,
@@ -77,5 +77,9 @@ footer {
 h3 {
     margin: 0;
     padding: 5px;
+}
+
+.board {
+
 }
 
