@@ -35,6 +35,10 @@ main {
     height: 600px;  
 }
 
+h2 { 
+    margin: 0;
+}
+
 .tools {
     display: flex;
     flex-direction: column;
