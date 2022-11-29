@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
-*,
-*::before,
-*::after {
-    /* box-sizing: border-box; */
-}
-
 body,
 button {
     font-family: 'Comic Neue', cursive;
@@ -21,12 +15,18 @@ body {
 
 main {
     position: relative;
+    height: calc(100% - (20vh + 5vh)); /* Calculating the space left between heading and footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
 }
 
 .heading {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 20vh;
 }
 
 h1 {
@@ -72,6 +72,7 @@ footer {
     bottom: 0px;
     right: 0px;
     left: 0px;
+    height: 5vh;
 }
 
 h3 {
@@ -80,6 +81,8 @@ h3 {
 }
 
 .board {
-
+    height: 500px;
+    width: 500px;
+    border: 5px solid white;
 }
 
