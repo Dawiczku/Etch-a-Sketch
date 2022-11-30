@@ -38,6 +38,17 @@ main {
 h2 { 
     margin: 0;
     align-self: center;
+    font-size: 3em;
+    padding: 20px;
+    text-shadow: 
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 9px #0468b9,
+    0 0 15px #0468b9,
+    0 0 21px #0468b9,
+    0 0 27px #0468b9,
+    0 0 34px #0468b9,
+    0 0 40px #0468b9;
 }
 
 .tools {
