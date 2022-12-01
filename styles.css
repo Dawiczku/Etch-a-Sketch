@@ -29,8 +29,6 @@ main {
 
 .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 3em;
     height: 600px;  
 }
@@ -65,7 +63,6 @@ button {
 
 h2 { 
     margin: 0;
-    align-self: center;
     font-size: 3em;
     padding: 20px;
     text-shadow: 
@@ -122,15 +119,15 @@ h1 {
     }    
   }
 
-h1:hover {
+h1:hover,
+h2:hover,
+h3:hover {
     cursor: default;
 }
 
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     background-color: white;
     color: #0a0a23;
     position: absolute;
