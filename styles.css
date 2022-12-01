@@ -139,6 +139,23 @@ button:active {
     transition: 0.02s;
 }
 
+.slider-container {
+    text-align: center;
+}
+
+.slider-container > p {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    padding: 10px;
+    text-shadow: 
+    0 0 3px #fff,
+    0 0 6px #2d99dd,
+    0 0 9px #2d99dd,
+    0 0 12px #2d99dd,
+    0 0 20px #2d99dd;
+}
+
 footer {
     text-align: center;
     background-color: white;
