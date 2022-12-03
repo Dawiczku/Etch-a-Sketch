@@ -8,9 +8,17 @@ let rainbowBtn = document.getElementById("rainbow");
 let userClrBtn = document.getElementById("user-color");
 let colorPicker = document.getElementById("colorpicker");
 
-let pixelValue = slider.value;
+function setPixelValue(value){
+    let pixelValue = value;
+    sliderDesc.textContent = `Grid size: ${pixelValue} x ${pixelValue}`;
+}
+
+setPixelValue(slider.value);
 
 slider.addEventListener("mousemove", () => {
-    pixelValue = slider.value;
-    sliderDesc.textContent = `Grid size: ${pixelValue} x ${pixelValue}`;
+    setPixelValue(slider.value);
+})
+
+slider.addEventListener("click", () => {
+    setPixelValue(slider.value);
 })
