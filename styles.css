@@ -25,14 +25,12 @@ button {
 
 .container,
 .user-color-container,
-.tools,
 .heading,
 main {
     display: flex;
 }
 
 .user-color-container,
-.tools,
 .heading,
 main {
     align-items: center;
@@ -44,13 +42,11 @@ main {
     justify-content: center;
 }
 
-.user-color-container,
-.tools {
+.user-color-container{
     flex-direction: column;
 }
 
 .container,
-.tools,
 .board {
     height: var(--container-height);
 }
@@ -128,12 +124,6 @@ h1 {
     box-shadow: 0 0 10px 5px var(--neon-clr);
 }
 
-
-.tools {
-    justify-content: space-between;
-    flex: 1;
-}
-
 h2 { 
     font-size: var(--h2-size);
     padding: 20px;
@@ -150,7 +140,7 @@ h2 {
 
 button {
     font-size: var(--btn-font-size);
-    width: 100%;
+    width: 80%;
     background-color: inherit;
     color: var(--neon-clr);
     border: 3px solid currentColor;
@@ -203,7 +193,7 @@ button:active {
 }
 
 input[type=range] {
-    width: 100%;
+    width: 80%;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -228,4 +218,12 @@ footer {
 
 h3 {    
     padding: 5px;
+}
+
+.tools {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
