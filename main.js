@@ -8,3 +8,9 @@ let rainbowBtn = document.getElementById("rainbow");
 let userClrBtn = document.getElementById("user-color");
 let colorPicker = document.getElementById("colorpicker");
 
+let pixelValue = slider.value;
+
+slider.addEventListener("mousemove", () => {
+    pixelValue = slider.value;
+    sliderDesc.textContent = `Grid size: ${pixelValue} x ${pixelValue}`;
+})
