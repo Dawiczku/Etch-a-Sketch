@@ -173,8 +173,14 @@ button:active {
 
 #colorpicker {
     display: none;
-    position: absolute;
+    width: 40%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    background-color: var(--background-clr);
+    border: none;
+    padding: 0;
 }
+
 
 .slider-container {
     text-align: center;
