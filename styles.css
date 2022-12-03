@@ -130,7 +130,7 @@ h1 {
 
 h2 { 
     font-size: var(--h2-size);
-    padding: 20px;
+    padding: 0px;
     text-shadow: 
     0 0 3px  var(--white-clr),
     0 0 6px  var(--white-clr),
@@ -175,16 +175,30 @@ button:active {
     transition: 0.02s;
 }
 
-#colorpicker {
-    display: none;
-    width: 40%;
+input[type="color"] {
+    appearance: none;
+    width: 60%;
     height: auto;
-    aspect-ratio: 2 / 1;
-    background-color: var(--background-clr);
+    aspect-ratio: 4 / 1;
     border: none;
+    background-color: var(--background-clr);
     padding: 0;
 }
 
+input[type="color"]:hover{
+    scale: 1.05;
+    cursor: pointer;
+}
+
+input[type="color"]:active{
+    scale: 1;
+    transition: transform 0.05s ease-in-out;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 15px;    
+}
 
 .slider-container {
     text-align: center;
