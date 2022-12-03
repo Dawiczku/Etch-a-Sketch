@@ -13,7 +13,7 @@
     --slider-background: #1e1e1e;
     --board-background: #0b58b;
     --btn-font-size: 1.75em;
-    --container-height: 600px;
+    --container-height: 640px;
     --h1-size: 5.5em;
     --h2-size: 3em;
     --grid-size: 32;
@@ -116,7 +116,7 @@ h1 {
   }
 
 .container {
-    gap: 8em;
+    gap: 3em;
 }
 
 .board {
@@ -239,5 +239,5 @@ h3 {
 }
 
 .box{
-    border: 1px solid gray;
+    border: 1px solid rgba(128, 128, 128, 0.3);
 }
