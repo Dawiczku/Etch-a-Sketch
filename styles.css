@@ -16,6 +16,7 @@
     --container-height: 600px;
     --h1-size: 5.5em;
     --h2-size: 3em;
+    --grid-size: 32;
 }
 
 body,
@@ -122,6 +123,9 @@ h1 {
     aspect-ratio: 1/1;
     border: 5px solid var(--background-clr);
     box-shadow: 0 0 10px 5px var(--neon-clr);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
 }
 
 h2 { 
@@ -232,4 +236,8 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.box{
+    border: 1px solid gray;
 }
