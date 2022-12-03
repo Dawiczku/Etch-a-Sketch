@@ -8,8 +8,3 @@ let rainbowBtn = document.getElementById("rainbow");
 let userClrBtn = document.getElementById("user-color");
 let colorPicker = document.getElementById("colorpicker");
 
-for(let i = 0; i < 32; i++){
-    let box = document.createElement("div");
-    box.className = "box";
-    board.appendChild(box);
-}
