@@ -52,9 +52,7 @@ setPixelValue(slider.value);
 setGrid(slider.value);
 
 slider.addEventListener("mousemove", () => {
-    removeGrid();
     setPixelValue(slider.value);
-    setGrid(slider.value);
 })
 
 slider.addEventListener("click", () => {
