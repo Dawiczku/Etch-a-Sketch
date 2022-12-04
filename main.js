@@ -13,6 +13,7 @@ const body = document.body;
 
 let mouseDown = false;
 let userBtnClicked = false;
+let rainbowBtnClicked = false;
 let currentColor = "#0075ff";
 
 // Declared functions
@@ -46,7 +47,13 @@ function changeColor(event) {
     if(event.type === "mouseover" && !mouseDown) return;
     if(userBtnClicked) {
         event.target.style.backgroundColor = colorPicker.value;
-    }  
+    } else if(rainbowBtnClicked) {
+        let randomR = Math.random() * 256;
+        let randomG = Math.random() * 256;
+        let randomB = Math.random() * 256;
+
+        event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    }
 }
 
 // Main code section
@@ -70,6 +77,15 @@ userClrBtn.addEventListener("click", () => {
         userClrBtn.classList.add("btn-clicked");
     } else {
         userClrBtn.classList.remove("btn-clicked");
+    }
+})
+
+rainbowBtn.addEventListener("click", () => {
+    rainbowBtnClicked = !rainbowBtnClicked;
+    if(rainbowBtnClicked) {
+        rainbowBtn.classList.add("btn-clicked");
+    } else {
+        rainbowBtn.classList.remove("btn-clicked");
     }
 })
 
