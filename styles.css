@@ -167,12 +167,18 @@ button:hover {
     scale: 1.1;
 }
 
-button:active {
+button:active,
+.btn-clicked {
     box-shadow: 
     inset 0 0 0.65em var(--neon-clr),
           0 0 0.65em var(--neon-clr),
           0 0 0.7em  var(--neon-clr);
-    transition: 0.02s;
+    transition: 0.1s ease-in-out;
+    scale: 1;
+}
+
+.btn-clicked {
+    scale: 1.1;
 }
 
 input[type="color"] {
