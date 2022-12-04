@@ -12,6 +12,7 @@ const colorPicker = document.getElementById("colorpicker");
 const body = document.body;
 
 let mouseDown = false;
+let userBtnClicked = false;
 let currentColor = "#0075ff";
 
 // Declared functions
@@ -43,7 +44,9 @@ function removeGrid() {
 
 function changeColor(event) {
     if(event.type === "mouseover" && !mouseDown) return;
-    event.target.style.backgroundColor = currentColor;
+    if(userBtnClicked) {
+        event.target.style.backgroundColor = colorPicker.value;
+    }  
 }
 
 // Main code section
@@ -59,6 +62,15 @@ slider.addEventListener("click", () => {
     removeGrid();
     setPixelValue(slider.value);
     setGrid(slider.value);
+})
+
+userClrBtn.addEventListener("click", () => {
+    userBtnClicked = !userBtnClicked;
+    if(userBtnClicked) {
+        userClrBtn.classList.add("btn-clicked");
+    } else {
+        userClrBtn.classList.remove("btn-clicked");
+    }
 })
 
 body.addEventListener("mousedown", () => mouseDown = true);
