@@ -63,7 +63,6 @@ setGridValue(currentSize);
 refreshGrid(currentSize);
 createGrid(currentSize);
 
-
 colorpicker.addEventListener("change", function (event) {setCurrentColor(event.target.value)});
 userColorButton.addEventListener("click", function() {setCurrentMode("userMode")});
 warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
