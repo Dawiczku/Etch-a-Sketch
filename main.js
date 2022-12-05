@@ -16,6 +16,9 @@ const board = document.getElementById("board");
 const buttons = document.getElementsByTagName("button");
 const slider = document.getElementById("slider");
 const colorpicker = document.getElementById("colorpicker");
+const body = document.body;
+
+let mousedown = false;
 
 function setCurrentColor(newColor) {
     currentColor = newColor;
@@ -35,3 +38,6 @@ userColorButton.addEventListener("click", function() {setCurrentMode("userMode")
 warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
 coldColorButton.addEventListener("click", function() {setCurrentMode("coldMode")});
 eraserButton.addEventListener("click", function() {setCurrentMode("eraserMode")});
+
+body.addEventListener("mousedown", () => mousedown = true);
+body.addEventListener("mouseup", () => mousedown = false);
