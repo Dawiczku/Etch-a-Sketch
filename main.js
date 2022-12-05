@@ -47,6 +47,23 @@ function createGrid(size) {
     refreshGrid(size);
 }
 
+function removeGrid() {
+    while(board.firstChild) {
+        board.removeChild(board.lastChild); 
+    }
+}
+
+function setGridValue(size) {
+    sliderValue.textContent = `Grid size: ${size} x ${size}`;
+}
+
+// Main code
+
+setGridValue(currentSize);
+refreshGrid(currentSize);
+createGrid(currentSize);
+
+
 colorpicker.addEventListener("change", function (event) {setCurrentColor(event.target.value)});
 userColorButton.addEventListener("click", function() {setCurrentMode("userMode")});
 warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
@@ -55,3 +72,16 @@ eraserButton.addEventListener("click", function() {setCurrentMode("eraserMode")}
 
 body.addEventListener("mousedown", () => mouseDown = true);
 body.addEventListener("mouseup", () => mouseDown = false);
+
+slider.addEventListener("click", () => {
+    removeGrid();
+    setCurrentSize(slider.value);
+    refreshGrid(currentSize);
+    setGridValue(currentSize);
+    createGrid(currentSize);
+})
+
+slider.addEventListener("mousemove", () => {
+    setCurrentSize(slider.value);
+    setGridValue(currentSize);
+})
