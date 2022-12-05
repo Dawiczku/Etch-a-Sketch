@@ -42,6 +42,7 @@ function createGrid(size) {
     for(let i = 0; i < size ** 2; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
+        box.addEventListener("mouseover", changeColor);
         board.append(box);
     }
     refreshGrid(size);
@@ -55,6 +56,23 @@ function removeGrid() {
 
 function setGridValue(size) {
     sliderValue.textContent = `Grid size: ${size} x ${size}`;
+}
+
+function changeColor(event) {
+    if(event.type === "mouseover" && !mouseDown) return;
+    if(currentMode === "userMode") {
+        event.target.style.backgroundColor = currentColor;
+    } else if(currentMode === "warmMode") {
+        let warmColors = ['yellow', 'orange', 'red'];
+        let randomNumber = Math.floor(Math.random() * 3);
+        event.target.style.backgroundColor = warmColors[randomNumber];
+    } else if(currentMode === "coldMode") {
+        let coldColors = ['aqua', 'dodgerblue', 'aquamarine'];
+        let randomNumber = Math.floor(Math.random() * 3);
+        event.target.style.backgroundColor = coldColors[randomNumber]; 
+    } else if(currentMode === "eraserMode") {
+        event.target.style.removeProperty("background-color");
+    }
 }
 
 // Main code
