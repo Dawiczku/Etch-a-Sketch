@@ -132,6 +132,9 @@ slider.addEventListener("click", () => {
 })
 
 slider.addEventListener("mousemove", () => {
+    removeGrid();
     setCurrentSize(slider.value);
+    refreshGrid(currentSize);
     setGridValue(currentSize);
+    createGrid(currentSize);
 })
