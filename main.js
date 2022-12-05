@@ -19,6 +19,7 @@ const colorpicker = document.getElementById("colorpicker");
 
 function setCurrentColor(newColor) {
     currentColor = newColor;
+    console.log(currentColor);
 }
 
 function setCurrentMode(newMode) {
@@ -28,3 +29,9 @@ function setCurrentMode(newMode) {
 function setCurrentSize(newSize) {
     currentSize = newSize;
 }
+
+colorpicker.addEventListener("change", function (event) {setCurrentColor(event.target.value)});
+userColorButton.addEventListener("click", function() {setCurrentMode("userMode")});
+warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
+coldColorButton.addEventListener("click", function() {setCurrentMode("coldMode")});
+eraserButton.addEventListener("click", function() {setCurrentMode("eraserMode")});
