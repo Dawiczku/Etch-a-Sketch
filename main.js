@@ -27,6 +27,7 @@ function setCurrentColor(newColor) {
 }
 
 function setCurrentMode(newMode) {
+    activateButton(newMode);
     currentMode = newMode;
 }
 
@@ -43,6 +44,7 @@ function createGrid(size) {
     for(let i = 0; i < size ** 2; i++) {
         let box = document.createElement("div");
         box.classList.add("box");
+        box.addEventListener("mousedown", changeColor);
         box.addEventListener("mouseover", changeColor);
         board.append(box);
     }
@@ -81,6 +83,28 @@ function clearGrid() {
     for(let box of boxes) {
         box.style.removeProperty("background-color");
     }
+}
+
+function activateButton(newMode) {
+    if(currentMode === "userMode") {
+        userColorButton.classList.remove("btn-clicked");
+    } else if(currentMode === "warmMode") {
+        warmColorButton.classList.remove("btn-clicked");
+    } else if(currentMode === "coldMode") {
+        coldColorButton.classList.remove("btn-clicked");
+    } else if(currentMode === "eraserMode") {
+        eraserButton.classList.remove("btn-clicked");
+    }
+
+    if(newMode === "userMode") {
+        userColorButton.classList.add("btn-clicked");
+    } else if(newMode === "warmMode") {
+        warmColorButton.classList.add("btn-clicked");
+    } else if(newMode === "coldMode") {
+        coldColorButton.classList.add("btn-clicked");
+    } else if(newMode === "eraserMode") {
+         eraserButton.classList.add("btn-clicked");
+    } 
 }
 
 // Main code
