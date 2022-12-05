@@ -172,7 +172,8 @@ button:active,
     box-shadow: 
     inset 0 0 0.65em var(--neon-clr),
           0 0 0.65em var(--neon-clr),
-          0 0 0.7em  var(--neon-clr);
+          0 0 0.7em  var(--neon-clr),
+          0 0 0.75em var(--neon-clr);
     transition: 0.1s ease-in-out;
     scale: 1;
 }
