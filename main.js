@@ -5,17 +5,20 @@ const slider = document.getElementById("slider");
 const sliderDesc = document.getElementById("slider-desc");
 const clearBtn = document.getElementById("clear");
 const eraserBtn = document.getElementById("eraser");
-const shadeBtn = document.getElementById("shading");
-const rainbowBtn = document.getElementById("rainbow");
+const coldClrBtn = document.getElementById("cold-clr");
+const warmClrBtn = document.getElementById("warm-clr");
 const userClrBtn = document.getElementById("user-color");
 const colorPicker = document.getElementById("colorpicker");
 const body = document.body;
 
 let mouseDown = false;
 let userBtnClicked = false;
-let rainbowBtnClicked = false;
+let warmBtnClicked = false;
+let coldBtnClicked = false;
 let eraserBtnClicked = false;
 let currentColor = "#0075ff";
+const warmColors = ['red', 'orange', 'yellow'];
+const coldColors = ['aqua', 'dodgerblue', 'aquamarine'];
 
 // Declared functions
 
@@ -48,14 +51,15 @@ function changeColor(event) {
     if(event.type === "mouseover" && !mouseDown) return;
     if(userBtnClicked) {
         event.target.style.backgroundColor = colorPicker.value;
-    } else if(rainbowBtnClicked) {
-        let randomR = Math.random() * 256;
-        let randomG = Math.random() * 256;
-        let randomB = Math.random() * 256;
-
-        event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if(eraserBtnClicked) {
         event.target.style.backgroundColor = "#fff";
+    } else if(warmBtnClicked) {
+        let randomNumber = Math.floor(Math.random() * 3);
+        event.target.style.backgroundColor = warmColors[randomNumber];
+    } else if(coldBtnClicked) {
+        let randomNumber = Math.floor(Math.random() * 3);
+        
+        event.target.style.backgroundColor = coldColors[randomNumber];
     }
 }
 
@@ -83,15 +87,6 @@ userClrBtn.addEventListener("click", () => {
     }
 })
 
-rainbowBtn.addEventListener("click", () => {
-    rainbowBtnClicked = !rainbowBtnClicked;
-    if(rainbowBtnClicked) {
-        rainbowBtn.classList.add("btn-clicked");
-    } else {
-        rainbowBtn.classList.remove("btn-clicked");
-    }
-})
-
 eraserBtn.addEventListener("click", () => {
     eraserBtnClicked = !eraserBtnClicked;
     if(eraserBtnClicked) {
@@ -101,5 +96,23 @@ eraserBtn.addEventListener("click", () => {
     }
 })
 
+warmClrBtn.addEventListener("click", () => {
+    warmBtnClicked = !warmBtnClicked;
+    if(warmBtnClicked) {
+        warmClrBtn.classList.add("btn-clicked");
+    } else {
+        warmClrBtn.classList.remove("btn-clicked");
+    }
+})
+
+coldClrBtn.addEventListener("click", () => {
+    coldBtnClicked = !coldBtnClicked;
+    if(coldBtnClicked) {
+        coldClrBtn.classList.add("btn-clicked");
+    } else {
+        coldClrBtn.classList.remove("btn-clicked");
+    }
+})
+ 
 body.addEventListener("mousedown", () => mouseDown = true);
 body.addEventListener("mouseup", () => mouseDown = false);
