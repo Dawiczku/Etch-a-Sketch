@@ -57,9 +57,15 @@ function changeColor(event) {
         let randomNumber = Math.floor(Math.random() * 3);
         event.target.style.backgroundColor = warmColors[randomNumber];
     } else if(coldBtnClicked) {
-        let randomNumber = Math.floor(Math.random() * 3);
-        
+        let randomNumber = Math.floor(Math.random() * 3);  
         event.target.style.backgroundColor = coldColors[randomNumber];
+    }
+}
+
+function clearBoard() {
+    let boxes = board.getElementsByClassName("box");
+    for(let box of boxes) {
+        box.style.backgroundColor = "rgb(255,255,255)"
     }
 }
 
@@ -113,6 +119,8 @@ coldClrBtn.addEventListener("click", () => {
         coldClrBtn.classList.remove("btn-clicked");
     }
 })
+
+clearBtn.addEventListener("click", clearBoard);
  
 body.addEventListener("mousedown", () => mouseDown = true);
 body.addEventListener("mouseup", () => mouseDown = false);
