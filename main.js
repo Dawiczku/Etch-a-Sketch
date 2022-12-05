@@ -18,7 +18,7 @@ const slider = document.getElementById("slider");
 const colorpicker = document.getElementById("colorpicker");
 const body = document.body;
 
-let mousedown = false;
+let mouseDown = false;
 
 function setCurrentColor(newColor) {
     currentColor = newColor;
@@ -33,11 +33,25 @@ function setCurrentSize(newSize) {
     currentSize = newSize;
 }
 
+function refreshGrid(size) {
+    document.documentElement.style.setProperty("--grid-size", `${size}`);
+}
+
+function createGrid(size) {
+
+    for(let i = 0; i < size ** 2; i++) {
+        let box = document.createElement("div");
+        box.classList.add("box");
+        board.append(box);
+    }
+    refreshGrid(size);
+}
+
 colorpicker.addEventListener("change", function (event) {setCurrentColor(event.target.value)});
 userColorButton.addEventListener("click", function() {setCurrentMode("userMode")});
 warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
 coldColorButton.addEventListener("click", function() {setCurrentMode("coldMode")});
 eraserButton.addEventListener("click", function() {setCurrentMode("eraserMode")});
 
-body.addEventListener("mousedown", () => mousedown = true);
-body.addEventListener("mouseup", () => mousedown = false);
+body.addEventListener("mousedown", () => mouseDown = true);
+body.addEventListener("mouseup", () => mouseDown = false);
