@@ -4,7 +4,7 @@ const board = document.getElementById("board");
 const slider = document.getElementById("slider");
 const sliderDesc = document.getElementById("slider-desc");
 const clearBtn = document.getElementById("clear");
-const lightBtn = document.getElementById("lightening");
+const eraserBtn = document.getElementById("eraser");
 const shadeBtn = document.getElementById("shading");
 const rainbowBtn = document.getElementById("rainbow");
 const userClrBtn = document.getElementById("user-color");
@@ -14,6 +14,7 @@ const body = document.body;
 let mouseDown = false;
 let userBtnClicked = false;
 let rainbowBtnClicked = false;
+let eraserBtnClicked = false;
 let currentColor = "#0075ff";
 
 // Declared functions
@@ -53,6 +54,8 @@ function changeColor(event) {
         let randomB = Math.random() * 256;
 
         event.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    } else if(eraserBtnClicked) {
+        event.target.style.backgroundColor = "#fff";
     }
 }
 
@@ -86,6 +89,15 @@ rainbowBtn.addEventListener("click", () => {
         rainbowBtn.classList.add("btn-clicked");
     } else {
         rainbowBtn.classList.remove("btn-clicked");
+    }
+})
+
+eraserBtn.addEventListener("click", () => {
+    eraserBtnClicked = !eraserBtnClicked;
+    if(eraserBtnClicked) {
+        eraserBtn.classList.add("btn-clicked")
+    } else {
+        eraserBtn.classList.remove("btn-clicked");
     }
 })
 
