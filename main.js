@@ -20,9 +20,10 @@ const body = document.body;
 
 let mouseDown = false;
 
+// Functions section
+
 function setCurrentColor(newColor) {
     currentColor = newColor;
-    console.log(currentColor);
 }
 
 function setCurrentMode(newMode) {
@@ -75,6 +76,13 @@ function changeColor(event) {
     }
 }
 
+function clearGrid() {
+    let boxes = board.getElementsByClassName("box");
+    for(let box of boxes) {
+        box.style.removeProperty("background-color");
+    }
+}
+
 // Main code
 
 setGridValue(currentSize);
@@ -86,6 +94,7 @@ userColorButton.addEventListener("click", function() {setCurrentMode("userMode")
 warmColorButton.addEventListener("click", function() {setCurrentMode("warmMode")});
 coldColorButton.addEventListener("click", function() {setCurrentMode("coldMode")});
 eraserButton.addEventListener("click", function() {setCurrentMode("eraserMode")});
+clearButton.addEventListener("click", function () {clearGrid()});
 
 body.addEventListener("mousedown", () => mouseDown = true);
 body.addEventListener("mouseup", () => mouseDown = false);
